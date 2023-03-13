@@ -27,7 +27,7 @@ namespace Torres_de_Hanoi
 
         public List<Disco> Elementos { get; set; }
 
-        private int numeroDiscos;
+        private int numeroDisco;
 
         //constructor de la clase pila
         public Pila()
@@ -52,7 +52,7 @@ namespace Torres_de_Hanoi
         {
             // elimino el último disco
             Disco ultimo = Elementos.Last();
-            Elementos.RemoveAt(Elementos.Count - 1);
+            Elementos.RemoveAt(Elementos.Count() - 1);
 
             // Actualizo el tamaño de la pila
             Size = Elementos.Count();

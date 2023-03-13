@@ -12,6 +12,7 @@ namespace Torres_de_Hanoi
         private int contador = 0;
         /*TODO: Implementar métodos*/
         //movemos de A a B
+        
         public void mover_disco(Pila a, Pila b)
         {
             //Si A está vacio el disco pasará de B a A
@@ -33,6 +34,7 @@ namespace Torres_de_Hanoi
             }// si el diametro del ultimo elemento de la pila B es menor, lo añadiremos a la pila A
             else if(b.Top < a.Top) {
                 a.push(b.pop() );
+                contador++;
             }    
         }
         //Ahora haremos el método para solucionar el juego 
@@ -45,26 +47,85 @@ namespace Torres_de_Hanoi
                 while (fin.Size != n)
                 {
                     mover_disco(ini, fin);
-                    Console.Write("Movimiento numero: " + contador);
+                    Console.WriteLine("Movimiento numero: " + contador);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila inicial: " + ini.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila auxiliar: " + aux.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila final: " + fin.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("\n");
+
                     mover_disco(ini, aux);
-                    Console.Write("Movimiento numero: " + contador);
+                    Console.WriteLine("Movimiento numero: " + contador);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila inicial: " + ini.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila auxiliar: " + aux.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila final: " + fin.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("\n");
+
                     mover_disco(aux, fin);
-                    Console.Write("Movimiento numero: " + contador);
+                    Console.WriteLine("Movimiento numero: " + contador);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila inicial: " + ini.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila auxiliar: " + aux.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila final: " + fin.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("\n");
+
                 }
             }
             else
             {
-                mover_disco(ini, aux);
-                Console.Write("Movimiento numero: " + contador);
-                mover_disco(ini, fin);
-                Console.Write("Movimiento numero: " + contador);
-                mover_disco(aux, fin);
-                Console.Write("Movimiento numero: " + contador);
+                while (fin.Size != n)
+                {
+                    mover_disco(ini, aux);
+                    Console.WriteLine("Movimiento numero: " + contador);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila inicial: " + ini.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila auxiliar: " + aux.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila final: " + fin.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("\n");
+                    mover_disco(ini, fin);
+                    Console.WriteLine("Movimiento numero: " + contador);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila inicial: " + ini.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila auxiliar: " + aux.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila final: " + fin.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("\n");
+                    mover_disco(aux, fin);
+                    Console.WriteLine("Movimiento numero: " + contador);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila inicial: " + ini.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila auxiliar: " + aux.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Tamaño pila final: " + fin.Size);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("\n");
+
+                    Console.Write("\n");
+                }
             }
+
 
             return contador;
 
         }
+
+        
 
     }
 }
