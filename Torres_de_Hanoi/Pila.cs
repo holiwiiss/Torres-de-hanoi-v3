@@ -66,7 +66,7 @@ namespace Torres_de_Hanoi
                 Top = Elementos.Last().Valor;
             }
 
-            return null;
+            return ultimo;
         }                
 
         public bool isEmpty()
