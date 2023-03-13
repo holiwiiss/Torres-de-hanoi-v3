@@ -19,12 +19,15 @@ namespace Torres_de_Hanoi
         */
 
         /* TODO: Implementar métodos */
+
+        //getters y setters
         public int Size { get; set; }
 
         public int Top { get; set; }
 
         public List<Disco> Elementos { get; set; }
 
+        //constructor de la clase pila
         public Pila()
         {
             this.Size = 0;
@@ -32,22 +35,54 @@ namespace Torres_de_Hanoi
             Elementos = new List<Disco>();
         }
 
-
+        //Con este metodo añadiré un disco 
         public void push(Disco d)
         {
+            //se añade a mi pila de discos un disco 
             Elementos.Add(d);
+            // Actualizo el tamaño de la pila
             Size = Elementos.Count();
+            // y saber cual es el disco que esta arriba del todo
             Top = d.Valor;
         }
 
         public Disco pop()
         {
+            // elimino el último disco
+            Disco ultimo = Elementos.Last();
+            Elementos.RemoveAt(Elementos.Count - 1);
+
+            // Actualizo el tamaño de la pila
+            Size = Elementos.Count();
+            
+            //Actualizo el top
+            if(Elementos.Count() == 0) { 
+                // En este caso es 0 porque no hay elementos
+                Top= 0;
+            }
+            else
+            {
+                //y en este caso devuelvo el último disco, porque si hay elementos 
+                Top = Elementos.Last().Valor;
+            }
+
             return null;
         }                
 
         public bool isEmpty()
         {
-            return true;
+            // Si la lista de discos es 0, quiere decir que no hay discos
+            if(Elementos.Count() == 0)
+            {
+                //no hay discos asi que está vacía
+                return true;
+            }
+            else
+            {
+                //si hay discos
+                return false;
+            }
+            
         }
 
     }
