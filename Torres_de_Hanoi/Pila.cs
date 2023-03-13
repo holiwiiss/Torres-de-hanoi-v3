@@ -27,6 +27,8 @@ namespace Torres_de_Hanoi
 
         public List<Disco> Elementos { get; set; }
 
+        private int numeroDiscos;
+
         //constructor de la clase pila
         public Pila()
         {
